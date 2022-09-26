@@ -17,25 +17,40 @@ My thoughts haunt me as my parents&#39; house creeps into sight. There are four 
 
 &quot;I really should have been here sooner...&quot;
 
-[[Face your memories. | Reason to Explore]]</tw-passagedata><tw-passagedata pid="2" name=" Reason to Explore" tags="" position="775,250" size="100,100">I walk up to our front door and never has a simple door looked more imposing. 
+[[Face your memories. | Reason to Explore]]
+
+
+(set: $restaurant to 0)
+(set: $cornMaze to 0)
+(set: $advice to 0)
+(set: $argument to 0)
+(set: $firstDrink to 0)
+(set: $firstJob to 0)</tw-passagedata><tw-passagedata pid="2" name=" Reason to Explore" tags="" position="800,250" size="100,100">I walk up to our front door and never has a simple door looked more imposing. 
 
 &quot;Although I guess it&#39;s not the door I&#39;m afraid of. Well here I go.&quot;
 
-KNOCK KNOCK /* should the player knock here or just walk in? how comfortable are they with their family?*/
+(link:&quot;Do I knock?&quot;)[KNOCK KNOCK]
+(link:&quot;Or do I just walk in?&quot;)[&quot;Hello?&quot;]
 
 After a few moments, I hear shuffling behind the door.
 
-&quot;Hello? Oh *character name* you&#39;re here!&quot;
+&quot;Hello? Oh  you&#39;re here!&quot;
 
 &quot;Hey Dad... sorry for being late.&quot;
 
+“It’s alright, we’re just glad you were able to come! We know how busy you are…”
 
+“So is Mom able to talk?”
 
-[[Next | Hub Tile 1]]</tw-passagedata><tw-passagedata pid="3" name=" Hub Tile 1" tags="" position="975,250" size="100,100">
+“Umm… she actually just fell asleep. Maybe you could take a walk around town. She’ll probably be awake by the time you get back.”
 
-[[Restaurant]]
-[[Corn Maze]]
-[[Advice]]
+[[I guess I’ll take a walk. | Hub Tile 1]]
+</tw-passagedata><tw-passagedata pid="3" name=" Hub Tile 1" tags="" position="975,250" size="100,100">(if: $restaurant is 0)[[Restaurant]]
+(else:)[[Restaurant]]
+(if: $cornMaxe is 0)[[Corn Maze]]
+(else:)[[Corn Maze]]
+(if: $advice is 0)[[Advice]]
+(else:)[[Advice]]
 [[Move on | Hub Tile 2]]</tw-passagedata><tw-passagedata pid="4" name="Restaurant" tags="" position="950,100" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="Corn Maze" tags="" position="1100,150" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="Advice" tags="" position="1125,275" size="100,100"></tw-passagedata><tw-passagedata pid="7" name=" Hub Tile 2" tags="" position="875,425" size="100,100">
 
 [[Argument]]
