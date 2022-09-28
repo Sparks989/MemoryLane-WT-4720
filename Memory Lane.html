@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Memory Lane.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Memory Lane" startnode="1" creator="Twine" creator-version="2.4.1" format="Harlowe" format-version="3.3.1" ifid="D858C6BA-0E30-43B7-B40C-CF5BC9FB4097" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="625,250" size="100,100">There is always so much more color here this time of year. The street is painted orange and my car hums after such a long drive. 
+<tw-storydata name="Memory Lane" startnode="1" creator="Twine" creator-version="2.4.1" format="Harlowe" format-version="3.3.1" ifid="D858C6BA-0E30-43B7-B40C-CF5BC9FB4097" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="650,250" size="100,100">There is always so much more color here this time of year. The street is painted orange and my car hums after such a long drive. 
 
 &quot;Ten minutes left... Am I really ready to see her again after so long? Dad said that she was losing more and more... What if she doesn&#39;t recognize me?&quot;
 
@@ -25,7 +25,8 @@ My thoughts haunt me as my parents&#39; house creeps into sight. There are four 
 (set: $advice to 0)
 (set: $argument to 0)
 (set: $firstDrink to 0)
-(set: $firstJob to 0)</tw-passagedata><tw-passagedata pid="2" name=" Reason to Explore" tags="" position="800,250" size="100,100">I walk up to our front door and never has a simple door looked more imposing. 
+(set: $firstJob to 0)
+(set: $hubTile1 to 0)</tw-passagedata><tw-passagedata pid="2" name=" Reason to Explore" tags="" position="800,250" size="100,100">I walk up to our front door and never has a simple door looked more imposing. 
 
 &quot;Although I guess it&#39;s not the door I&#39;m afraid of. Well here I go.&quot;
 
@@ -45,24 +46,151 @@ After a few moments, I hear shuffling behind the door.
 “Umm… she actually just fell asleep. Maybe you could take a walk around town. She’ll probably be awake by the time you get back.”
 
 [[I guess I’ll take a walk. | Hub Tile 1]]
-</tw-passagedata><tw-passagedata pid="3" name=" Hub Tile 1" tags="" position="975,250" size="100,100">(if: $restaurant is 0)[[Restaurant]]
-(else:)[[Restaurant]]
-(if: $cornMaxe is 0)[[Corn Maze]]
-(else:)[[Corn Maze]]
+</tw-passagedata><tw-passagedata pid="3" name=" Hub Tile 1" tags="" position="975,250" size="100,100">(if: $hubTile1 is 0)[I just wander around for a while, trying to get my thoughts in order. It isn’t long before I’m at our town’s main street.]
+
+“Hmm we sure do have a lot of memories in this town. Maybe I should look around for a bit before going back to see Mom.”
+
+“Well let’s see what I find…”
+
+
+(if: $restaurant is 0)[[Restaurant]]
+(if: $restaurant is 1)[[Restaurant]]
+(if: $cornMaze is 0)[[“What’s with all the corn over there? |Corn Maze]]
+(if: $cornMaze is 1)[[&quot;Well if I go back I&#39;ll never find my way out again. |Corn Maze]]
 (if: $advice is 0)[[Advice]]
-(else:)[[Advice]]
-[[Move on | Hub Tile 2]]</tw-passagedata><tw-passagedata pid="4" name="Restaurant" tags="" position="950,100" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="Corn Maze" tags="" position="1100,150" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="Advice" tags="" position="1125,275" size="100,100"></tw-passagedata><tw-passagedata pid="7" name=" Hub Tile 2" tags="" position="875,425" size="100,100">
+(if: $advice is 1)[[Advice]]
+[[Move on | Hub Tile 2]]
+(set: $hubTile1 to 1)</tw-passagedata><tw-passagedata pid="4" name="Restaurant" tags="" position="950,100" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="Corn Maze" tags="" position="1125,125" size="100,100">“Oh, now this brings back memories.”
+
+Corn stretches out with a couple of scarecrows marking an entrance. 
+
+“The annual harvest festival is coming up pretty soon. I guess they got the corn maze up early. Doesn’t seem like anyone is here…might as well take a look.”
+
+I wander around for what seems like ages, the corn looms tall over me and I can barely make out a couple of buildings outside the maze.
+
+“Welp, guess I’m lost. What do they say in survival guides? The right hand rule?”
+
+Following my trusty right hand rule ends up leading me straight into a dead end. A cold breeze washes over me as I’m struck with deja vu. 
+
+“So my sense of direction really hasn’t improved since I was five huh… back then I ended up giving up and crying. I still remember thinking Mom was an angel sent to save me when she found me. She didn’t even do the maze! She just pushed through the corn to make sure I was safe.”
+
+Calling upon Mom’s strategy I find a couple of places where the corn is thin and push my way through. It takes a couple of minutes, but I find my way out. 
+
+“Note to self, don’t wander into mazes. Guess I better head back to Main Street.”
+
+[[&quot;Well better head back. | Hub Tile 1]]
+(set: $cornMaze to 1)
+</tw-passagedata><tw-passagedata pid="6" name="Advice" tags="" position="1125,275" size="100,100">&quot;Man, I would really kill for some coffee right now. It was a long trip home&quot;
+
+I walk into the coffee shop and immediately the smell of the roasted coffee beans envelopes me. It has been awhile since I smelled the sweet hometown coffee, it brings me right back to the times where my mom and I would come here for coffee after a long day of school and work. 
+
+I go up to the barista and order my usual pumpkin spiced latte. This is what I would order during the fall season. It brings me back to the memory of my mom and I talking after I was having some social problems in school. She would always order a caramel latte when we came here, and we went to sit together at our favorite spot in the corner.
+
+I grabbed my coffee and went to sit in our spot. Suddenly the memory came back to me.
+
+*&quot;Mom, I don&#39;t know what to do. Jessica didn&#39;t invite me out with all the girls, and I saw them all hanging out without me on instagram.&quot;
+
+My mom gave me a sad smile, &quot;I know, I know it hurts a lot honey. But I guarantee in a couple years you won&#39;t even think or talk about these girls anymore. They aren&#39;t your true friends if they are leaving you out. You should try to surround yourself with people who love and care about you. Real friends wouldn&#39;t hurt you like that.&quot;
+
+I sighed. I knew she was right, but I didn&#39;t want her to be. &quot;When am I going to find my people then?&quot;
+
+&quot;I don&#39;t know honey. But you are a very likable person so I can&#39;t imagine it taking too long.&quot;*
+
+I smiled upon this memory. She was right. Jessica and those girls weren&#39;t even really nice to me and ended up being really mean when they grew up. I&#39;m glad I realized they weren&#39;t my true friends then. I ended up becoming friends with these really kind girls in the art club shortly after this conversation, and I still keep in touch with them to this day.
+
+[[Something | Hub Tile 1]]
+(set: $advice to 1)
+</tw-passagedata><tw-passagedata pid="7" name=" Hub Tile 2" tags="" position="875,425" size="100,100">“Wow, they really changed a lot over here… I guess this is the town’s attempt to draw in tourists. I bet I can still find some of the old hangouts.”
+
+“Let’s see what there is around here.”
 
 [[Argument]]
 [[First Drink]]
 [[First Job/ Moving Away]]
 [[Go back | Hub Tile 1]]
-[[Move on | Reflection]]</tw-passagedata><tw-passagedata pid="8" name="Argument" tags="" position="1025,400" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="First Drink" tags="" position="1025,525" size="100,100"></tw-passagedata><tw-passagedata pid="10" name="First Job/ Moving Away" tags="" position="875,575" size="100,100"></tw-passagedata><tw-passagedata pid="11" name=" Reflection" tags="" position="650,475" size="100,100">
+[[Move on | Reflection 1]]</tw-passagedata><tw-passagedata pid="8" name="Argument" tags="" position="1025,400" size="100,100">The smell of grease hangs in the air as I walk in. After taking in the atmosphere for a moment I go and sit down at our old table. Once I sit down I feel under the table.
+
+“Yep, our names are still there. Man, it feels like a lifetime ago that we all used to come here. The food was terrible, but it was cheap.”
+
+As I sit there in recollection, my happy memories drift into sadder ones.
+
+*“Honey, where are you going?”
+
+Mom looked over from the kitchen, knife in hand, as I walked to the front door.
+
+“I’m going to get pizza with friends tonight.”
+
+“Oh come on dear, tonight’s family night. I just want all of us to have a chance to eat together.”
+
+“Come on Mom, family night? I’m sixteen. I’m too old for that.”
+
+“You’re never too old to spend time with your family. You can’t at least stay for a little while? There will be garlic bread!”
+
+“Sorry Mom, I’ll let you know when I get back.”*
+
+“How many times did we have that argument? It feels like all Mom ever wanted was for all of us to spend time together… I really should have tried to meet her halfway.”
+
+[[&quot;Well if I linger any longer someone might actually come to take my order.&quot; | Hub Tile 2]]
+(set: $argument to 1)</tw-passagedata><tw-passagedata pid="9" name="First Drink" tags="" position="1025,525" size="100,100">I walked into the bar that was pretty barren except for a couple of regulars. It was the middle of the day, so it made sense. The bartender looks pretty familiar too. I think he was the one who served me when my parents took me out for my 21st birthday.
+
+It wasn&#39;t my first drink as I had been a college student for a couple years already, but it was the first time I&#39;d ever had alcohol in front of my parents. My dad recommended all of his favorite beers and my mom recommended her favorite cocktails. I ended up going with a mojito because that was my mom&#39;s favorite.
+
+It was a lot stronger than I expected and I remembered making a face on my first sip. my parents cheered me on and we ended up having a great night together. My mom didn&#39;t end up drinking so she could drive me and my dad home. She smiled at us as we sang along to the radio the entire drive home.
+
+[[Something | Hub Tile 2]]
+(set: $firstDrink to 1)</tw-passagedata><tw-passagedata pid="10" name="First Job/ Moving Away" tags="" position="875,575" size="100,100"></tw-passagedata><tw-passagedata pid="11" name="Reflection 2" tags="" position="575,525" size="100,100">
 
 
 [[Ending 1]]
 [[Ending 2]]
-[[Ending 3]]</tw-passagedata><tw-passagedata pid="12" name="Ending 1" tags="" position="475,500" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="Ending 2" tags="" position="550,625" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="Ending 3" tags="" position="675,650" size="100,100"></tw-passagedata></tw-storydata>
+[[Ending 3]]</tw-passagedata><tw-passagedata pid="12" name="Ending 1" tags="" position="400,550" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="Ending 2" tags="" position="475,675" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="Ending 3" tags="" position="600,700" size="100,100"></tw-passagedata><tw-passagedata pid="15" name=" Reflection 1" tags="" position="725,450" size="100,100">I get back and find the front door partially cracked. I rush in and find Mom standing in the kitchen. 
+
+“Oh hi honey! You’re home already?”
+
+“Mom, what are you doing?! You need to be in bed.”
+
+“Don’t worry dear, I was just making something for you so you wouldn’t go hungry.”
+
+“That’s sweet Mom, but I don’t live here anymore.”
+
+“Oh don’t be ridiculous, you were probably just out with your friends again. What was the place you’re always going to?”
+
+Player choice: pizza-wings-ramen
+
+Mom’s response if right, close, or wrong
+1.  Oh yes! I recall you guys loved your pizza
+2. Oh huh, guess that makes sense…
+3. Wow, I don&#39;t remember that at all.
+
+“Well if you don’t want my cooking, why don’t we order something from Siciliano’s.”
+
+“Mom, why don’t you come sit down?”
+
+“Honey, you worry about me too much. Now what did you always order?”
+
+Player choice: Italian Grinder-Chicken Parm-Ravioli
+
+Mom’s response if right, close, or wrong
+1. Yes! that&#39;s the one. You liked it since
+2. Oh, maybe.
+3. I could&#39;ve sworn you hated Ravioli…
+
+“Mom, I’m 28. Please try and remember.”
+
+“28… that’s right. You left on the bus back then. Oh why can’t I remember? Where did you move?
+
+Player choice: Seattle-Portland-LA
+
+
+Mom’s response
+1. Oh yes! for your first big job.
+2. Oh, you did move to a hippie place.
+3. I feel like I would have remembered that…
+
+“Oh that’s right… I should probably go lie down huh.”
+
+[[“Yeah Mom, let’s talk in your room some more.” |Reflection 2]]
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _createForOfIteratorHelper(e,t){var n,r="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!r){if(Array.isArray(e)||(r=_unsupportedIterableToArray(e))||t&&e&&"number"==typeof e.length)return r&&(e=r),n=0,{s:t=function(){},n:function(){return n>=e.length?{done:!0}:{done:!1,value:e[n++]}},e:function(e){throw e},f:t};throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var a,o=!0,i=!1;return{s:function(){r=r.call(e)},n:function(){var e=r.next();return o=e.done,e},e:function(e){i=!0,a=e},f:function(){try{o||null==r.return||r.return()}finally{if(i)throw a}}}}function _slicedToArray(e,t){return _arrayWithHoles(e)||_iterableToArrayLimit(e,t)||_unsupportedIterableToArray(e,t)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _iterableToArrayLimit(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=n){var r,a,o=[],i=!0,s=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(o.push(r.value),!t||o.length!==t);i=!0);}catch(e){s=!0,a=e}finally{try{i||null==n.return||n.return()}finally{if(s)throw a}}return o}}function _arrayWithHoles(e){if(Array.isArray(e))return e}function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){if(e){if("string"==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Map"===(n="Object"===n&&e.constructor?e.constructor.name:n)||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0}}function _iterableToArray(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _arrayLikeToArray(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
